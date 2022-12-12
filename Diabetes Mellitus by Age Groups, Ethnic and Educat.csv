@@ -1,0 +1,25 @@
+_id,Age Group,Overall Value of Diabetes Mellitus,Number of NO for Diabeted Mellitus,Percentage of NO for Diabetes Mellitus,Number of YES for Diabetes Mellitus,Percent of YES for Diabetes Mellitus
+1,Age group years 19,10,10,-100.00,0,0.00
+2,Age group years 20-24,14,14,-100.00,0,0.00
+3,Age group years 25-29,42,42,-100.00,0,0.00
+4,Age group years 30-34,61,61,-100.00,0,0.00
+5,Age group years 35-39,102,98,-96.10,4,-3.90
+6,Age group years 40-44,186,168,-90.30,18,-9.70
+7,Age group years 45-49,302,253,-83.80,49,-16.20
+8,Age group years 50-54,431,347,-80.50,84,-19.50
+9,Age group years 55-59,577,420,-72.80,157,-27.20
+10,Age group years 60-64,643,462,-71.90,181,-28.10
+11,Age group years 65-69,595,427,-71.80,168,-28.20
+12,Age group years 70-74,572,388,-67.80,184,-32.20
+13,Age group years 75-79,311,211,-67.80,100,-32.20
+14,Age group years 80,239,182,-76.20,57,-23.80
+15,Gender Male,2293,1765,-77.00,528,-23.00
+16,Gender Female,1776,1315,-74.00,461,-26.00
+17,Ethnic Malay,1759,1319,-75.00,440,-25.00
+18,Ethnic Chinese,1636,1222,-74.70,414,-25.30
+19,Ethnic Indian,232,145,-62.50,87,-37.50
+20,Ethnic Others,470,409,-87.00,61,-13.00
+21,Education level No formal education,404,323,-80.00,81,-20.00
+22,Education level Primary,564,432,-76.60,132,-23.40
+23,Education level Secondary,660,507,-76.80,153,-23.20
+24,Education level Tertiary,199,155,-77.90,44,-22.10

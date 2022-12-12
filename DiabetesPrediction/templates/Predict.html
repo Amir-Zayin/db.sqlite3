@@ -1,0 +1,171 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Predict</title>
+    <style>
+        body{
+            background-image: url("{% static 'DiabetesPrediction\images\image4.jpg' %}");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            margin: 0;
+            overflow-y: scroll;
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        .header{
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .header .atas{
+            display: flex;
+            height: 70px;
+        }
+
+        .header .atas h3{
+            color: rgb(255, 54, 54);
+            vertical-align: middle;
+            display: table-cell;
+            width: 70%;
+            margin: auto;
+            padding: auto;
+            padding-left: 30px;
+        }
+
+        .header .atas .page{
+            float: right;
+            height: 100%;
+        }
+
+        .header .atas .page a{
+            float: left;
+            padding: 0 10px;
+            margin: 0 3px;
+            height: 100%;
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+        }
+
+        .header .bawah{
+            background-color: rgb(255, 54, 54);
+            padding: 5px 20px 10px 20px;
+            height: 55px;
+            display: flex;
+        }
+
+        .header .bawah h4{
+            color: rgb(255, 255, 255);
+            margin: auto;
+        }
+
+        h1{
+            color: #0086b3;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        input[type=number]{
+          width: 100%; /* Full width */
+          padding: 12px; /* Some padding */
+          border: 1px solid #ccc; /* Gray border */
+          border-radius: 4px; /* Rounded borders */
+          box-sizing: border-box; /* Make sure that padding and width stays in place */
+          margin-top: 6px; /* Add a top margin */
+          margin-bottom: 10px; /* Bottom margin */
+          resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+        }
+
+        /* Style the submit button with a specific background color etc */
+        input[type=submit] {
+          background-color: #04AA6D;
+          color: white;
+          padding: 12px 20px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+
+        /* When moving the mouse over the submit button, add a darker green color */
+        input[type=submit]:hover {
+          background-color: #45a049;
+        }
+
+        /* Add a background color and some padding around the form */
+        .container {
+          width: 50%;
+          margin: auto;
+          border-radius: 5px;
+          background-color: #f2f2f2;
+          margin-top: 8%;
+          padding: 20px;
+        }
+
+        .active {
+            background-color: rgba(15, 15, 15, 0.3);
+        }
+
+    </style>
+</head>
+<body>
+<div class="header">
+    <div class="atas">
+        <h3>DIABETES PREDICTION SYSTEM</h3>
+        <div class="page">
+            <a href="/predict" class="active"><h4>UPDATE DATA</h4></a>
+            <a href="/info"><h4>INFO DIABETES</h4></a>
+            <a href="/viewdata"><h4>VIEW DATA</h4></a>
+            <a href="/profile"><h4>PROFILE</h4></a>
+        </div>
+    </div>
+    <div class="bawah">
+        <h4>DIABETES PREDICTION</h4>
+    </div>
+</div>
+<div align = 'center' class ="container">
+    <h1>Please enter the following information:</h1>
+    <form action="result" method="post">{% csrf_token %}
+        <table>
+
+            <tr>
+            <td align="right">Glucose:</td>
+            <td align="left"> <input type="number" name="n1" min="0" max="200" required></td>
+            </tr>
+
+            <tr>
+            <td align="right">Blood Pressure:</td>
+            <td align="left"> <input type="number" name="n2" min="0" max="200" required></td>
+            </tr>
+
+            <tr>
+            <td align="right">Insulin:</td>
+            <td align="left"> <input type="number" name="n3" min="0" max="1000" required></td>
+            </tr>
+
+            <tr>
+            <td align="right">BMI:</td>
+            <td align="left"> <input type="number" step="any" name="n4" min="0" max="100" required></td>
+            </tr>
+
+        </table>
+        <input type="submit" value = "Predict" style="margin-bottom: 10px;">
+    </form>
+    Glucose:{{result1}}<br>
+    Blood Pressure:{{result2}}<br>
+    Insulin:{{result3}}<br>
+    BMI:{{result4}}<br>
+    Result:{{result5}}
+</div>
+<br><br>
+<script>
+    {{ alert }}'{{ message }}');
+</script>
+</body>
+</html>

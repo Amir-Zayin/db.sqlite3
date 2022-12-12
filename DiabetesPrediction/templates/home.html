@@ -1,0 +1,232 @@
+{% load static %}
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <link rel="icon" type="image/x-icon" href="DiabetesPrediction/DiabetesPrediction/static/DiabetesPrediction/images/icon2.ico">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+    <style type = text/css>
+        h1{
+
+            color: #4BBFDE;
+            font-family: "audiowide", sans-serif;
+            font-size: 60px;
+            font-weight: bold;
+            display:table-cell;
+            vertical-align: middle;
+            box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
+            background: rgba(40, 57, 101, .9);
+        }
+        body {
+            background-image: url("{% static 'DiabetesPrediction/images/image89.webp' %}");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        *,:after,:before{box-sizing:border-box}
+        .clearfix:after,.clearfix:before{content:'';display:table}
+        .clearfix:after{clear:both;display:block}
+
+        .login-wrap{
+            width: 100%;
+            margin: auto;
+            position: relative;
+            box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
+        }
+
+        .login-html{
+            width: 60%;
+            height: 670px;
+            position: absolute;
+            padding: 90px 70px 50px 70px;
+            background: rgba(40, 57, 101, .9);
+            margin: 0 auto;
+            padding-top: 20px;
+            font-size: larger;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 15%);
+        }
+
+        .login-html .sign-in-html, .login-html .sign-up-html{
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            position: absolute;
+            transform: rotateY(180deg);
+            backface-visibility: hidden;
+            transition: all .4s linear;
+        }
+
+        .login-html .sign-in, .login-html .sign-up, login-form .check{
+            display: none;
+        }
+
+        .login-html .tab{
+            margin-right: 15px;
+            padding-bottom: 5px;
+            margin: 0 15px 10px 0;
+            display: inline-block;
+            border-bottom: 2px solid transparent;
+        }
+
+        .login-html .sign-in:checked + .tab, .login-html .sign-up:checked + .tab{
+            color: rgb(255, 255, 255);
+            border-color: rgb(17, 98, 238);
+            font-size: 20px;
+        }
+
+        .login-form{
+            min-height: 345px;
+            position: relative;
+            perspective: 1000px;
+            transform-style: preserve-3d;
+        }
+
+        .login-form label, .login-form input{
+            width: 100%;
+            color: rgb(255, 255, 255);
+            display: block;
+            font-size: 20px;
+        }
+
+        .login-form input{
+            border: none;
+            padding: 15px 20px;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, .1);
+        }
+
+        .login-form input[type="password"]{
+            text-security: circle;
+            -webkit-text-security: circle;
+        }
+
+        .login-form label{
+            color: rgb(170, 170, 170);
+            font-size: 15px;
+        }
+
+        .login-form input[type="submit"]{
+            background: rgb(17, 98, 238);
+        }
+
+        .login-form label .icon{
+            width: 15px;
+            height: 15px;
+            border-radius: 2px;
+            position: relative;
+            display: inline-block;
+            background: rgba(255, 255, 255, .1);
+        }
+
+        .login-form label .icon:before, .login-form label .icon:after{
+            content:'';
+            width: 10px;
+            height: 2px;
+            background: rgb(255, 255, 255);
+            position: absolute;
+            transition: all .2s ease-in-out 0s;
+        }
+
+        .login-form label .icon:before{
+            left: 3px;
+            width: 5px;
+            bottom: 6px;
+            transform: scale(0) rotate(0);
+        }
+
+        .login-form label .icon:after{
+            top: 6px;
+            right: 0;
+            transform: scale(0) rotate(0);
+        }
+
+        .login-form .check:checked + label{
+            color: rgb(255, 255, 255);
+        }
+
+        .login-form .check:checked + label .icon{
+            background: rgb(17, 98, 238);
+        }
+
+        .login-form .check:checked + label .icon:before{
+            transform: scale(1) rotate(45deg);
+        }
+
+        .login-form .check:checked + label .icon:after{
+            transform: scale(1) rotate(-45deg);
+        }
+
+        .login-html .sign-in:checked + .tab + .sign-up + .tab + .login-form .sign-in-html{
+            transform: rotate(0);
+        }
+
+        .login-html .sign-up:checked + .tab + .login-form .sign-up-html{
+            transform: rotate(0);
+        }
+
+        .hr{
+            height: 2px;
+            margin: 60px 0 50px 0;
+            background: rgba(255, 255, 255, .2);
+        }
+
+    </style>
+</head>
+<body>
+<div class="container" align = 'center'>
+    <br>
+    <h1>
+        WELCOME TO MYDIABETICRISK
+    </h1>
+    <div class="login-wrap">
+        <div class="login-html">
+            <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+            <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+            <div class="login-form">
+                <div class="sign-in-html">
+                    <form action = "login" method="post" >{% csrf_token %}
+                        <br>
+                        <label style="font-size:20px">Username</label>
+                        <input type="text" name="username"><br>
+                        <label style="font-size:20px">Password</label>
+                        <input type="password" name="pass"><br>
+                        <input type = "submit" value = "Login">
+                        <label for="tab-2" style="padding-top: 10px; font-size:20px">Don't have an account?</label>
+                    </form>
+                    <div class="hr"></div>
+                </div>
+                <div class="sign-up-html">
+                    <form action = "signup" method="post">{% csrf_token %}
+                        <br>
+                        <label style="font-size:20px">Username</label>
+                        <input type="text" name="username"><br>
+                        <label style="font-size:20px">Password</label>
+                        <input type="password" name="pass"><br>
+                        <label style="font-size:20px">Repeat password</label>
+                        <input type="password" name="repass"><br>
+                        <label style="font-size:20px">Email</label>
+                        <input type="email" name="email"><br>
+                        <input type = "submit" value = "Sign up">
+                        <label for="tab-1" style="padding-top: 10px;font-size:20px">Already have an account?</label>
+                    </form>
+                    <div class="hr"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    {{ alert }}'{{ message }}');
+</script>
+</body>
+</html>

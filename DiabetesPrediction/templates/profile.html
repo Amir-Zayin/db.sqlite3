@@ -1,0 +1,197 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile Update</title>
+    <style>
+        body{
+            background-image: url("{% static 'DiabetesPrediction\images\image6.jpg' %}");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            margin: 0;
+            overflow-y: scroll;
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        .header{
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .header .atas{
+            display: flex;
+            height: 70px;
+        }
+
+        .header .atas h3{
+            color: rgb(255, 54, 54);
+            vertical-align: middle;
+            display: table-cell;
+            width: 70%;
+            margin: auto;
+            padding: auto;
+            padding-left: 30px;
+        }
+
+        .header .atas .page{
+            float: right;
+            height: 100%;
+        }
+
+        .header .atas .page a{
+            float: left;
+            padding: 0 10px;
+            margin: 0 3px;
+            height: 100%;
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+        }
+
+        .header .bawah{
+            background-color: rgb(255, 54, 54);
+            padding: 5px 20px 10px 20px;
+            height: 55px;
+            display: flex;
+        }
+
+        .header .bawah h4{
+            color: rgb(255, 255, 255);
+            margin: auto;
+        }
+
+        h1{
+            color: #0086b3;
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 40px;
+        }
+
+        input[type=text], input[type=email], input[type=password]{
+            height: 25px;
+            width: 45%;
+            padding: 0 5px;
+            border: 1px solid rgb(0, 0, 0);
+            border-radius: 15px 5px;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        input[type=number]{
+          width: 100%; /* Full width */
+          padding: 12px; /* Some padding */
+          border: 1px solid #ccc; /* Gray border */
+          border-radius: 4px; /* Rounded borders */
+          box-sizing: border-box; /* Make sure that padding and width stays in place */
+          margin-top: 6px; /* Add a top margin */
+          margin-bottom: 10px; /* Bottom margin */
+          resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+        }
+
+        /* Style the submit button with a specific background color etc */
+        input[type=submit] {
+          background-color: #04AA6D;
+          color: white;
+          padding: 12px 20px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+
+        /* When moving the mouse over the submit button, add a darker green color */
+        input[type=submit]:hover {
+          background-color: #45a049;
+        }
+
+        /* Add a background color and some padding around the form */
+        .container {
+          width: 45%;
+          margin: auto;
+          border-radius: 5px;
+          background-color: #f2f2f2;
+          margin-top: 5%;
+          padding: 20px;
+        }
+
+        .active {
+            background-color: rgba(15, 15, 15, 0.3);
+        }
+
+        table {
+          font-family: Arial, Helvetica, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+
+        table td, #customers th {
+          border: 1px solid #ddd;
+          padding: 8px;
+        }
+
+        table tr:nth-child(even){background-color: #f2f2f2;}
+
+        table tr:hover {background-color: #ddd;}
+
+        table th {
+          padding-top: 12px;
+          padding-bottom: 12px;
+          text-align: left;
+          background-color: #04AA6D;
+          color: white;
+        }
+
+    </style>
+</head>
+<body>
+<div class="header">
+    <div class="atas">
+        <h3>DIABETES PREDICTION SYSTEM</h3>
+        <div class="page">
+            <a href="/predict"><h4>UPDATE DATA</h4></a>
+            <a href="/info"><h4>INFO DIABETES</h4></a>
+            <a href="/viewdata"><h4>VIEW DATA</h4></a>
+            <a href="/profile" class="active"><h4>PROFILE</h4></a>
+        </div>
+    </div>
+    <div class="bawah">
+        <h4>DIABETES PREDICTION</h4>
+    </div>
+</div>
+<div align='center' class="container">
+    <h1>USER UPDATE</h1>
+    <form action="updatedetail" method="POST">{% csrf_token %}
+        <label>Username</label><br>
+        <input type="text" name="username" value="{{username}}" required><br><br>
+        <label>Email</label><br>
+        <input type="email" name="email" value="{{email}}" required><br><br>
+        <label>New Password</label><br>
+        <input type="password" name="passnew"><br><br>
+        <label>Repeat New Password</label><br>
+        <input type="password" name="repassnew"><br><br>
+        <label>Password</label><br>
+        <input type="password" name="pass" required><br><br><br>
+        <input type="submit">
+    </form>
+    <br>
+    <form action="logout">
+        <input type="submit" value="Logout">
+    </form>
+</div>
+<br><br>
+<script>
+    {{ alert }}'{{ message }}');
+
+
+
+
+
+</script>
+</body>
+</html>

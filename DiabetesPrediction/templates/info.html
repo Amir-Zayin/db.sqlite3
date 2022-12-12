@@ -1,0 +1,154 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Info</title>
+    <style>
+        body{
+            background-image: url("{% static 'DiabetesPrediction\images\image4.jpg' %}");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            margin: 0;
+            overflow-y: scroll;
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        .header{
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .header .atas{
+            display: flex;
+            height: 70px;
+        }
+
+        .header .atas h3{
+            color: rgb(255, 54, 54);
+            vertical-align: middle;
+            display: table-cell;
+            width: 70%;
+            margin: auto;
+            padding: auto;
+            padding-left: 30px;
+        }
+
+        .header .atas .page{
+            float: right;
+            height: 100%;
+        }
+
+        .header .atas .page a{
+            float: left;
+            padding: 0 10px;
+            margin: 0 3px;
+            height: 100%;
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+        }
+
+        .header .bawah{
+            background-color: rgb(255, 54, 54);
+            padding: 5px 20px 10px 20px;
+            height: 55px;
+            display: flex;
+        }
+
+        .header .bawah h4{
+            color: rgb(255, 255, 255);
+            margin: auto;
+        }
+
+        h1{
+            color: #0086b3;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        /* Style the submit button with a specific background color etc */
+        input[type=submit] {
+          background-color: #04AA6D;
+          color: white;
+          padding: 12px 20px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+
+        /* When moving the mouse over the submit button, add a darker green color */
+        input[type=submit]:hover {
+          background-color: #45a049;
+        }
+
+        /* Add a background color and some padding around the form */
+        .container {
+          width: 60%;
+          margin: auto;
+          border-radius: 5px;
+          background-color: #f2f2f2;
+          margin-top: 8%;
+          padding: 20px;
+          display: grid;
+          grid-template-columns: 25% 25% 10% 40%;
+          grid-template-rows: 33% 33% 33%;
+        }
+
+        .active {
+            background-color: rgba(15, 15, 15, 0.3);
+        }
+
+        .container .desc {
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-row-start: 1;
+            grid-row-end: 4;
+        }
+
+        .container img {
+            grid-column-start: 4;
+            grid-row-start: 1;
+            grid-row-end: 3;
+            width: 450px;
+            height: 350px;
+        }
+
+        .button-container button {
+            text-decoration: none;
+        }
+
+        .button-container button a {
+            text-decoration: none;
+            color: black;
+        }
+
+    </style>
+</head>
+<body>
+<div class="header">
+    <div class="atas">
+        <h3>DIABETES PREDICTION SYSTEM</h3>
+        <div class="page">
+            <a href="/predict"><h4>UPDATE DATA</h4></a>
+            <a href="/info" class="active"><h4>INFO DIABETES</h4></a>
+            <a href="/viewdata"><h4>VIEW DATA</h4></a>
+            <a href="/profile"><h4>PROFILE</h4></a>
+        </div>
+    </div>
+    <div class="bawah">
+        <h4>DIABETES INFO</h4>
+    </div>
+</div>
+<div align = 'center' class ="container">
+    <p class="desc">Diabetes is a chronic (long -lasting) health condition that affects the way your body converts food into energy. Most of the food you eat is broken down into sugar also called glucose and released into your bloodstream. When your blood sugar rises, it signals your pancreas to release insulin. This website is used to determine whether you have Diabetes or not by demonstrating data analysis using logistic regression techniques and the preparation of effective grafts for these Diabetic Patients.</p>
+    <img src="https://health.wyo.gov/wp-content/uploads/2020/08/diabetes-word-collage-1000x675.jpg">
+</div>
+</body>
+</html>
